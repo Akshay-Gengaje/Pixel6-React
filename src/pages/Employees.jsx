@@ -9,11 +9,13 @@ const Employees = () => {
   const [selectedGender, setSelectedGender] = useState("all");
   return (
     <div>
+      {/* Header section with title and filter options */}
+
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold">Employees</h1>
         <div className="flex items-center gap-5">
           <FaFilter className="text-red-700" />
-          {/* <CountryOptions /> */}
+          {/* Dropdown to filter by state */}
           <div>
             <select
               className="p-1 border border-black rounded-sm dark:bg-gray-900"
@@ -28,7 +30,7 @@ const Employees = () => {
               ))}
             </select>
           </div>
-          {/* Gender Options  */}
+          {/* Dropdown to filter by gender */}
           <div>
             <select
               className="p-1 border border-black rounded-sm dark:bg-gray-900 "
@@ -42,6 +44,7 @@ const Employees = () => {
           </div>
         </div>
       </div>
+      {/* Employee table with applied filters */}
       <EmployeeTableCustom state={selectedState} gender={selectedGender} />
     </div>
   );
